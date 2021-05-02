@@ -1,0 +1,12 @@
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\obj\Debug\Shop_project.csprojAssemblyReference.cache
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\obj\Debug\Shop_project.Form1.resources
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\obj\Debug\Shop_project.Properties.Resources.resources
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\obj\Debug\Shop_project.csproj.GenerateResource.cache
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\obj\Debug\Shop_project.csproj.CoreCompileInputs.cache
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\bin\Debug\DB.mdf
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\bin\Debug\DB_log.ldf
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\bin\Debug\ХорошихБлаг.exe.config
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\bin\Debug\ХорошихБлаг.exe
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\bin\Debug\ХорошихБлаг.pdb
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\obj\Debug\ХорошихБлаг.exe
+C:\Users\VMICH\Desktop\Shop_project\Shop_project\obj\Debug\ХорошихБлаг.pdb

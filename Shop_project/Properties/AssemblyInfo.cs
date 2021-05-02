@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
 [assembly: AssemblyTitle("Shop_project")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Курсовой проект по дисциплине 'Конструирование программ и языки программирования'")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Елизавета Каравай")]
 [assembly: AssemblyProduct("Shop_project")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
