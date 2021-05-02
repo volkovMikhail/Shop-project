@@ -47,10 +47,10 @@ namespace Shop_project
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNameSearch = new System.Windows.Forms.TextBox();
             this.listViewCatalog = new System.Windows.Forms.ListView();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -108,6 +108,7 @@ namespace Shop_project
             // 
             resources.ApplyResources(this.textBoxPriceTop, "textBoxPriceTop");
             this.textBoxPriceTop.Name = "textBoxPriceTop";
+            this.textBoxPriceTop.TextChanged += new System.EventHandler(this.textBoxPriceTop_TextChanged);
             this.textBoxPriceTop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPriceTop_KeyPress);
             // 
             // label2
@@ -130,6 +131,7 @@ namespace Shop_project
             this.comboBoxCategory.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxCategory, "comboBoxCategory");
             this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategory_SelectedIndexChanged);
             // 
             // grbox
             // 
@@ -145,12 +147,14 @@ namespace Shop_project
             resources.ApplyResources(this.radioButtonExpansive, "radioButtonExpansive");
             this.radioButtonExpansive.Name = "radioButtonExpansive";
             this.radioButtonExpansive.UseVisualStyleBackColor = true;
+            this.radioButtonExpansive.CheckedChanged += new System.EventHandler(this.radioButtonExpansive_CheckedChanged);
             // 
             // radioButtonPure
             // 
             resources.ApplyResources(this.radioButtonPure, "radioButtonPure");
             this.radioButtonPure.Name = "radioButtonPure";
             this.radioButtonPure.UseVisualStyleBackColor = true;
+            this.radioButtonPure.CheckedChanged += new System.EventHandler(this.radioButtonPure_CheckedChanged);
             // 
             // radioButtonPopularity
             // 
@@ -159,6 +163,7 @@ namespace Shop_project
             this.radioButtonPopularity.Name = "radioButtonPopularity";
             this.radioButtonPopularity.TabStop = true;
             this.radioButtonPopularity.UseVisualStyleBackColor = true;
+            this.radioButtonPopularity.CheckedChanged += new System.EventHandler(this.radioButtonPopularity_CheckedChanged);
             // 
             // label1
             // 
@@ -169,6 +174,7 @@ namespace Shop_project
             // 
             resources.ApplyResources(this.textBoxNameSearch, "textBoxNameSearch");
             this.textBoxNameSearch.Name = "textBoxNameSearch";
+            this.textBoxNameSearch.TextChanged += new System.EventHandler(this.textBoxNameSearch_TextChanged);
             // 
             // listViewCatalog
             // 
@@ -181,6 +187,12 @@ namespace Shop_project
             this.listViewCatalog.TileSize = new System.Drawing.Size(570, 100);
             this.listViewCatalog.UseCompatibleStateImageBehavior = false;
             this.listViewCatalog.View = System.Windows.Forms.View.Tile;
+            // 
+            // imageList
+            // 
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            resources.ApplyResources(this.imageList, "imageList");
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // tabControl1
             // 
@@ -202,12 +214,6 @@ namespace Shop_project
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // imageList
-            // 
-            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            resources.ApplyResources(this.imageList, "imageList");
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Form1
             // 

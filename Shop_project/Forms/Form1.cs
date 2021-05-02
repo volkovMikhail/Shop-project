@@ -23,6 +23,7 @@ namespace Shop_project
         private void Form1_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["database"].ConnectionString);
+            updateCategory();
             outputFromProducts();
         }
 
@@ -65,7 +66,6 @@ namespace Shop_project
             SqlDataReader dataReader = null;
             try
             {
-                updateCategory();
 
                 queryParams queryParams;
                 queryParams.searchText = textBoxNameSearch.Text;
@@ -75,8 +75,10 @@ namespace Shop_project
                 queryParams.bottomPrice = textBoxPriceBottom.Text;
                 queryParams.topPrice = textBoxPriceTop.Text;
                 queryParams.category = comboBoxCategory.SelectedItem.ToString();
+
+                string commandText = queryBuilder.query(queryParams);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT id,name,price,image FROM Products", conn);
+                SqlCommand cmd = new SqlCommand(commandText, conn);
                 dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
@@ -105,7 +107,7 @@ namespace Shop_project
 
         private void textBoxPriceBottom_TextChanged(object sender, EventArgs e)
         {
-            
+            outputFromProducts();
         }
 
         private void textBoxPriceBottom_KeyPress(object sender, KeyPressEventArgs e)
@@ -126,6 +128,36 @@ namespace Shop_project
             {
                 e.Handled = true;
             }
+        }
+
+        private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            outputFromProducts();
+        }
+
+        private void textBoxNameSearch_TextChanged(object sender, EventArgs e)
+        {
+            outputFromProducts();
+        }
+
+        private void radioButtonPopularity_CheckedChanged(object sender, EventArgs e)
+        {
+            outputFromProducts();
+        }
+
+        private void radioButtonPure_CheckedChanged(object sender, EventArgs e)
+        {
+            outputFromProducts();
+        }
+
+        private void radioButtonExpansive_CheckedChanged(object sender, EventArgs e)
+        {
+            outputFromProducts();
+        }
+
+        private void textBoxPriceTop_TextChanged(object sender, EventArgs e)
+        {
+            outputFromProducts();
         }
     }
 }
