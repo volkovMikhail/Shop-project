@@ -25,4 +25,4 @@ C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.Re
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.Login.resources
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Main.resources
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.Admin.resources
-C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.Product.resources
+C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.ProductForm.resources

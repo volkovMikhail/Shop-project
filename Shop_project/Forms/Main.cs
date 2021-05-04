@@ -18,6 +18,7 @@ namespace Shop_project
     {
         User user;
         SqlConnection conn;
+        List<Product> CartProducts;
         public Main()
         {
             InitializeComponent();
@@ -270,6 +271,24 @@ namespace Shop_project
                 textBoxEmail.Enabled = false;
                 maskedTextBoxPhone.Enabled = false;
             }
+        }
+
+        private void listViewCatalog_Click(object sender, EventArgs e)
+        {
+            if (listViewCatalog.SelectedItems.Count > 0)
+            {
+                ProductForm productForm = new ProductForm(Convert.ToInt32(Convert.ToInt32(listViewCatalog.SelectedItems[0].Tag)));
+                if (productForm.ShowDialog() == DialogResult.OK)
+                {
+                    //TODO add to cart
+                }
+                else
+                {
+                    //TODO cancel
+                }
+            }
+            listViewCatalog.SelectedItems.Clear();
+            GC.Collect();
         }
     }
 }
