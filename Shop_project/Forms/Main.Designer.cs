@@ -52,6 +52,9 @@ namespace Shop_project
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label9 = new System.Windows.Forms.Label();
+            this.buttonAbout = new System.Windows.Forms.Button();
+            this.buttonCreateOrder = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
@@ -72,9 +75,6 @@ namespace Shop_project
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -259,8 +259,8 @@ namespace Shop_project
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.label9);
-            this.splitContainer2.Panel1.Controls.Add(this.button2);
-            this.splitContainer2.Panel1.Controls.Add(this.button1);
+            this.splitContainer2.Panel1.Controls.Add(this.buttonAbout);
+            this.splitContainer2.Panel1.Controls.Add(this.buttonCreateOrder);
             this.splitContainer2.Panel1.Controls.Add(this.groupBox2);
             this.splitContainer2.Panel1.Controls.Add(this.buttonLogin);
             this.splitContainer2.Panel1.Controls.Add(this.buttonReg);
@@ -268,6 +268,25 @@ namespace Shop_project
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // buttonAbout
+            // 
+            resources.ApplyResources(this.buttonAbout, "buttonAbout");
+            this.buttonAbout.Name = "buttonAbout";
+            this.buttonAbout.UseVisualStyleBackColor = true;
+            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
+            // 
+            // buttonCreateOrder
+            // 
+            resources.ApplyResources(this.buttonCreateOrder, "buttonCreateOrder");
+            this.buttonCreateOrder.Name = "buttonCreateOrder";
+            this.buttonCreateOrder.UseVisualStyleBackColor = true;
+            this.buttonCreateOrder.Click += new System.EventHandler(this.buttonCreateOrder_Click);
             // 
             // groupBox2
             // 
@@ -359,10 +378,11 @@ namespace Shop_project
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.listViewCart.ContextMenuStrip = this.contextMenuStrip1;
             resources.ApplyResources(this.listViewCart, "listViewCart");
+            this.listViewCart.FullRowSelect = true;
             this.listViewCart.GridLines = true;
             this.listViewCart.HideSelection = false;
-            this.listViewCart.MultiSelect = false;
             this.listViewCart.Name = "listViewCart";
             this.listViewCart.UseCompatibleStateImageBehavior = false;
             this.listViewCart.View = System.Windows.Forms.View.Details;
@@ -395,23 +415,7 @@ namespace Shop_project
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             resources.ApplyResources(this.удалитьToolStripMenuItem, "удалитьToolStripMenuItem");
-            // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.Name = "label9";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -491,8 +495,8 @@ namespace Shop_project
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAbout;
+        private System.Windows.Forms.Button buttonCreateOrder;
         private System.Windows.Forms.Label label9;
     }
 }

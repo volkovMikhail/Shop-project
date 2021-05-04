@@ -58,5 +58,14 @@ namespace Shop_project.Forms
                 }
             }
         }
+
+        private void linkLabelReg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Registration registration = new Registration(conn);
+            if (registration.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Регистрация завершена!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

@@ -25,6 +25,7 @@ namespace Shop_project
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            CartProducts = new List<Product>();
             user = new User();
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["database"].ConnectionString);
             updateCategory();
@@ -273,22 +274,107 @@ namespace Shop_project
             }
         }
 
+        private void renderCart()
+        {
+            listViewCart.Items.Clear();
+            foreach (var item in CartProducts)
+            {
+                ListViewItem viewItem = new ListViewItem(new string[] {
+                    Convert.ToString(item.id),
+                    item.name,
+                    DateTime.Now.ToShortDateString(),
+                    Convert.ToString(item.price)
+                });
+                viewItem.Tag = item.id;
+                listViewCart.Items.Add(viewItem);
+            }
+            GC.Collect();
+        }
+
         private void listViewCatalog_Click(object sender, EventArgs e)
         {
             if (listViewCatalog.SelectedItems.Count > 0)
             {
-                ProductForm productForm = new ProductForm(Convert.ToInt32(Convert.ToInt32(listViewCatalog.SelectedItems[0].Tag)));
+                int productId = Convert.ToInt32(Convert.ToInt32(listViewCatalog.SelectedItems[0].Tag));
+                ProductForm productForm = new ProductForm(productId);
                 if (productForm.ShowDialog() == DialogResult.OK)
                 {
-                    //TODO add to cart
+                    try
+                    {
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand($"UPDATE Products SET popularity = popularity + 5 WHERE Id = {productId}",conn);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
+                    CartProducts.Add(new Product(productId));
+                    renderCart();
                 }
                 else
                 {
-                    //TODO cancel
+                    try
+                    {
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand($"UPDATE Products SET popularity = popularity + 1 WHERE Id = {productId}", conn);
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             listViewCatalog.SelectedItems.Clear();
             GC.Collect();
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listViewCart.SelectedIndices.Count > 0)
+            {
+                CartProducts.RemoveRange(listViewCart.SelectedIndices[0], listViewCart.SelectedIndices.Count);
+                renderCart();
+            }
+            listViewCart.SelectedItems.Clear();
+            GC.Collect();
+        }
+
+        private void buttonCreateOrder_Click(object sender, EventArgs e)
+        {
+            if (user.id != -1)
+            {
+                if (CartProducts.Count < 1)
+                {
+                    MessageBox.Show("Карзина пуста","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else
+                {
+                    ConfirmOrder confirmOrder = new ConfirmOrder(user, CartProducts, conn);
+                    if (confirmOrder.ShowDialog() == DialogResult.OK)
+                    {
+                        MessageBox.Show("Заказ оформлен!\nОжидайте звонка", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CartProducts.Clear();
+                        renderCart();
+                    }
+                }
+            }
+            else
+            {
+                if (MessageBox.Show("Чтобы оформить заказ вам надо\nвойти в учётную запись", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    buttonLogin_Click(sender, e);
+                }
+            }
+        }
+
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutBox = new AboutBox();
+            aboutBox.ShowDialog();
         }
     }
 }

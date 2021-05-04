@@ -26,3 +26,5 @@ C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.Lo
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Main.resources
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.Admin.resources
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.ProductForm.resources
+C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.AboutBox.resources
+C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.ConfirmOrder.resources
