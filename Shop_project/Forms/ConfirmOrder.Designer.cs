@@ -125,13 +125,13 @@ namespace Shop_project.Forms
             // 
             // buttonPrint
             // 
+            this.buttonPrint.Enabled = false;
             this.buttonPrint.Location = new System.Drawing.Point(12, 346);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(310, 23);
             this.buttonPrint.TabIndex = 3;
             this.buttonPrint.Text = "Печать чека";
             this.buttonPrint.UseVisualStyleBackColor = true;
-            this.buttonPrint.Visible = false;
             this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // labelMessage
@@ -146,24 +146,24 @@ namespace Shop_project.Forms
             // 
             // buttonToTXT
             // 
+            this.buttonToTXT.Enabled = false;
             this.buttonToTXT.Location = new System.Drawing.Point(12, 317);
             this.buttonToTXT.Name = "buttonToTXT";
             this.buttonToTXT.Size = new System.Drawing.Size(310, 23);
             this.buttonToTXT.TabIndex = 5;
             this.buttonToTXT.Text = "Вывод в текстовый файл";
             this.buttonToTXT.UseVisualStyleBackColor = true;
-            this.buttonToTXT.Visible = false;
             this.buttonToTXT.Click += new System.EventHandler(this.buttonToTXT_Click);
             // 
             // buttonSendMail
             // 
+            this.buttonSendMail.Enabled = false;
             this.buttonSendMail.Location = new System.Drawing.Point(12, 288);
             this.buttonSendMail.Name = "buttonSendMail";
             this.buttonSendMail.Size = new System.Drawing.Size(310, 23);
             this.buttonSendMail.TabIndex = 6;
             this.buttonSendMail.Text = "Отправка на эл. почту";
             this.buttonSendMail.UseVisualStyleBackColor = true;
-            this.buttonSendMail.Visible = false;
             this.buttonSendMail.Click += new System.EventHandler(this.buttonSendMail_Click);
             // 
             // printDialog1
@@ -191,9 +191,13 @@ namespace Shop_project.Forms
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonAddOrder);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ConfirmOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Оформление заказа";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConfirmOrder_FormClosing);
             this.Load += new System.EventHandler(this.confirmOrder_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

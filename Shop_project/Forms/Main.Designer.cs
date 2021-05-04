@@ -96,7 +96,6 @@ namespace Shop_project
             // 
             // splitContainer1
             // 
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -252,7 +251,6 @@ namespace Shop_project
             // 
             // splitContainer2
             // 
-            this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.splitContainer2, "splitContainer2");
             this.splitContainer2.Name = "splitContainer2";
             // 

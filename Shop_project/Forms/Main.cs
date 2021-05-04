@@ -192,6 +192,7 @@ namespace Shop_project
             }
         }
 
+
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             if (buttonLogin.Text == "Войти" )//login
@@ -310,8 +311,16 @@ namespace Shop_project
                     {
                         MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
-                    CartProducts.Add(new Product(productId));
-                    renderCart();
+                    Product product = new Product(productId);
+                    if (product.quantity < 1)
+                    {
+                        MessageBox.Show("Приносим извинения, товар закончился","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        CartProducts.Add(product);
+                        renderCart();
+                    }
                 }
                 else
                 {
