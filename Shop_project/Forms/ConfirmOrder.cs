@@ -136,7 +136,8 @@ namespace Shop_project.Forms
             body += $"<b>Пользователь: {user.name} {user.lastName}</b><br/>";
             body += $"<b>Номер телефона: {user.phoneNum}</b><br/>";
             body += $"<b>Адрес: {address}</b><br/>";
-            body += $"<b>Дата: {DateTime.Now.ToShortDateString()}</b><br/><br/>";
+            body += $"<b>Дата: {DateTime.Now.ToShortDateString()}</b><br/>";
+            body += $"<b>Комментарий к заказу: {textBoxComment.Text}</b><br/><br/>";
             body += $"<h1>\tТовары:</h1></br><ol>";
             float sum = 0;
             foreach (Product item in cart)
@@ -177,6 +178,7 @@ namespace Shop_project.Forms
                 writer.WriteLine($"Адрес: {address}");
                 writer.WriteLine($"Эл. почта: {textBoxEmail.Text}");
                 writer.WriteLine($"Дата: {DateTime.Now.ToShortDateString()}");
+                writer.WriteLine($"Комментарий к заказу: {textBoxComment.Text}");
                 writer.WriteLine();
                 writer.WriteLine($"\tТовары:");
                 int counter = 1;
@@ -205,7 +207,8 @@ namespace Shop_project.Forms
             pageBody += $"Номер телефона: {user.phoneNum}\n";
             pageBody += $"Адрес: {address}\n";
             pageBody += $"Эл. почта: {textBoxEmail.Text}\n";
-            pageBody += $"Дата: {DateTime.Now.ToShortDateString()}\n\n";
+            pageBody += $"Дата: {DateTime.Now.ToShortDateString()}\n";
+            pageBody += $"Комментарий к заказу: {textBoxComment.Text}\n\n";
             pageBody += $"\tТовары:\n";
             double sum = 0;
             int counter = 1;

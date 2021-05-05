@@ -141,7 +141,7 @@ namespace Shop_project.Forms
             this.labelMessage.Name = "labelMessage";
             this.labelMessage.Size = new System.Drawing.Size(272, 13);
             this.labelMessage.TabIndex = 4;
-            this.labelMessage.Text = "Заказ оформлен! Выберете способ получения чека:";
+            this.labelMessage.Text = "Заказ оформлен! Выберите способ получения чека:";
             this.labelMessage.Visible = false;
             // 
             // buttonToTXT

@@ -74,9 +74,21 @@ namespace Shop_project.Forms
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.удалитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxCount = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.labelFile = new System.Windows.Forms.Label();
+            this.textBoxDiscription = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxCategory = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -110,7 +122,7 @@ namespace Shop_project.Forms
             this.tabPage1.Controls.Add(this.splitContainer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1076, 430);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Заказы";
@@ -165,7 +177,6 @@ namespace Shop_project.Forms
             this.listViewOrders.TabIndex = 1;
             this.listViewOrders.UseCompatibleStateImageBehavior = false;
             this.listViewOrders.View = System.Windows.Forms.View.Details;
-           
             // 
             // columnHeader1
             // 
@@ -205,7 +216,7 @@ namespace Shop_project.Forms
             // columnHeader4
             // 
             this.columnHeader4.Text = "Название";
-            this.columnHeader4.Width = 144;
+            this.columnHeader4.Width = 137;
             // 
             // columnHeader5
             // 
@@ -219,12 +230,13 @@ namespace Shop_project.Forms
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "Цена";
+            this.columnHeader7.Text = "Стоимость";
+            this.columnHeader7.Width = 70;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Дата";
-            this.columnHeader8.Width = 83;
+            this.columnHeader8.Width = 80;
             // 
             // columnHeader9
             // 
@@ -289,7 +301,6 @@ namespace Shop_project.Forms
             this.label3.TabIndex = 1;
             this.label3.Text = "Для удаления, активирования / деактивирования заказов нажмите правой кнопкой мыши" +
     "\r\n";
-            
             // 
             // groupBox1
             // 
@@ -325,7 +336,7 @@ namespace Shop_project.Forms
             // maskedTextBoxPhone
             // 
             this.maskedTextBoxPhone.Location = new System.Drawing.Point(118, 23);
-            this.maskedTextBoxPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBoxPhone.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBoxPhone.Mask = "+375(00)000-00-00";
             this.maskedTextBoxPhone.Name = "maskedTextBoxPhone";
             this.maskedTextBoxPhone.Size = new System.Drawing.Size(120, 20);
@@ -347,7 +358,7 @@ namespace Shop_project.Forms
             this.tabPage2.Controls.Add(this.splitContainer2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1076, 430);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Товары";
@@ -398,12 +409,12 @@ namespace Shop_project.Forms
             // Id
             // 
             this.Id.Text = "Id";
-            this.Id.Width = 64;
+            this.Id.Width = 57;
             // 
             // columnHeader14
             // 
             this.columnHeader14.Text = "Название";
-            this.columnHeader14.Width = 273;
+            this.columnHeader14.Width = 304;
             // 
             // columnHeader15
             // 
@@ -433,7 +444,7 @@ namespace Shop_project.Forms
             // columnHeader20
             // 
             this.columnHeader20.Text = "Количество в наличии";
-            this.columnHeader20.Width = 128;
+            this.columnHeader20.Width = 86;
             // 
             // contextMenuStrip2
             // 
@@ -448,43 +459,153 @@ namespace Shop_project.Forms
             this.удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
             this.удалитьToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
             this.удалитьToolStripMenuItem1.Text = "Удалить";
+            this.удалитьToolStripMenuItem1.Click += new System.EventHandler(this.удалитьToolStripMenuItem1_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textBoxCount);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.labelFile);
+            this.groupBox2.Controls.Add(this.textBoxDiscription);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.textBoxCategory);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.textBoxPrice);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.textBoxName);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Location = new System.Drawing.Point(5, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(806, 124);
+            this.groupBox2.Size = new System.Drawing.Size(1060, 124);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Добавлние товара";
             // 
-            // textBox1
+            // textBoxCount
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBoxCount.Location = new System.Drawing.Point(684, 82);
+            this.textBoxCount.Name = "textBoxCount";
+            this.textBoxCount.Size = new System.Drawing.Size(86, 20);
+            this.textBoxCount.TabIndex = 5;
+            this.textBoxCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCount_KeyPress);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(559, 85);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 13);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Количество в наличии";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(562, 27);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(129, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Загрузить картинку";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // labelFile
+            // 
+            this.labelFile.Location = new System.Drawing.Point(697, 33);
+            this.labelFile.Name = "labelFile";
+            this.labelFile.Size = new System.Drawing.Size(103, 13);
+            this.labelFile.TabIndex = 10;
+            this.labelFile.Text = "_";
+            // 
+            // textBoxDiscription
+            // 
+            this.textBoxDiscription.Location = new System.Drawing.Point(315, 27);
+            this.textBoxDiscription.Multiline = true;
+            this.textBoxDiscription.Name = "textBoxDiscription";
+            this.textBoxDiscription.Size = new System.Drawing.Size(199, 75);
+            this.textBoxDiscription.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(252, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Описание";
+            // 
+            // textBoxCategory
+            // 
+            this.textBoxCategory.Location = new System.Drawing.Point(83, 82);
+            this.textBoxCategory.Name = "textBoxCategory";
+            this.textBoxCategory.Size = new System.Drawing.Size(153, 20);
+            this.textBoxCategory.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 85);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Категория";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(266, 33);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 13);
+            this.label7.TabIndex = 5;
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(83, 56);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(153, 20);
+            this.textBoxPrice.TabIndex = 1;
+            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Цена";
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(83, 30);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(153, 20);
+            this.textBoxName.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 33);
+            this.label5.Location = new System.Drawing.Point(17, 33);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 1;
-            this.label5.Text = "label5";
+            this.label5.Text = "Название ";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(616, 92);
+            this.button1.Location = new System.Drawing.Point(870, 92);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(184, 26);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 6;
             this.button1.Text = "Добавить в базу данных";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Admin
             // 
@@ -556,7 +677,7 @@ namespace Shop_project.Forms
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.ListView listViewProducts;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
@@ -569,5 +690,17 @@ namespace Shop_project.Forms
         private System.Windows.Forms.ColumnHeader columnHeader18;
         private System.Windows.Forms.ColumnHeader columnHeader19;
         private System.Windows.Forms.ColumnHeader columnHeader20;
+        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxCategory;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxDiscription;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label labelFile;
+        private System.Windows.Forms.TextBox textBoxCount;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

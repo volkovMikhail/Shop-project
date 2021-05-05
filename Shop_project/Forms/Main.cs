@@ -374,7 +374,7 @@ namespace Shop_project
             }
             else
             {
-                if (MessageBox.Show("Чтобы оформить заказ вам надо\nвойти в учётную запись", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                if (MessageBox.Show("Чтобы оформить заказ вам необходимо\nвойти в учётную запись", "Внимание!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     buttonLogin_Click(sender, e);
                 }
@@ -387,6 +387,10 @@ namespace Shop_project
             aboutBox.ShowDialog();
         }
 
-       
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateCategory();
+            outputFromProducts();
+        }
     }
 }

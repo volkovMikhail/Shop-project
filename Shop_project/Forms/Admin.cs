@@ -8,12 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Shop_project.Forms
 {
     public partial class Admin : Form
     {
         SqlConnection conn;
+
+        struct validData
+        {
+            public bool nameIsOk;
+            public bool priceIsOk;
+            public bool categoryIsOk;
+            public bool discriptionIsOk;
+            public bool imgIsOk;
+            public bool countIsok;
+        }
+        validData valid;
         public Admin(SqlConnection connection)
         {
             conn = connection;
@@ -23,6 +35,12 @@ namespace Shop_project.Forms
         {
             updateOrders();
             updateProducts();
+            valid.nameIsOk = false;
+            valid.priceIsOk = false;
+            valid.categoryIsOk = false;
+            valid.discriptionIsOk = false;
+            valid.imgIsOk = false;
+            valid.countIsok = false;
         }
 
         private void updateProducts()
@@ -47,6 +65,7 @@ namespace Shop_project.Forms
                         Convert.ToString(dataReader[6]),
                         Convert.ToString(dataReader[7])
                     }) ;
+                    viewItem.Tag = dataReader[0];
                     listViewProducts.Items.Add(viewItem);
                 }
                 conn.Close();
@@ -259,6 +278,125 @@ namespace Shop_project.Forms
                 updateOrders();
             }
             listViewOrders.SelectedItems.Clear();
+            GC.Collect();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            if (openFileDialog1.FileName != string.Empty)
+            {
+                valid.imgIsOk = true;
+                labelFile.Text = openFileDialog1.SafeFileName;
+                try
+                {
+                    File.Copy(openFileDialog1.FileName, @"Resources\images\" + openFileDialog1.SafeFileName);
+                }
+                catch (Exception)
+                {
+                    
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBoxName.Text != string.Empty)
+            {
+                valid.nameIsOk = true;
+            }
+            if (textBoxCategory.Text != string.Empty)
+            {
+                valid.categoryIsOk = true;
+            }
+            if (textBoxDiscription.Text != string.Empty)
+            {
+                valid.discriptionIsOk = true;
+            }
+            if (textBoxCount.Text != string.Empty)
+            {
+                valid.countIsok = true;
+            }
+            if (textBoxPrice.Text != string.Empty)
+            {
+                valid.priceIsOk = true;
+            }
+
+            if (valid.categoryIsOk && valid.countIsok && valid.discriptionIsOk && valid.imgIsOk && valid.nameIsOk && valid.priceIsOk)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Products VALUES(@name,@price,@discr,@image,@category,@popularity,@quantity)", conn);
+                    cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = textBoxName.Text;
+                    cmd.Parameters.Add("@price", SqlDbType.Decimal).Value = textBoxPrice.Text;
+                    cmd.Parameters.Add("@discr", SqlDbType.NVarChar).Value = textBoxDiscription.Text;
+                    cmd.Parameters.Add("@image", SqlDbType.NVarChar).Value = labelFile.Text;
+                    cmd.Parameters.Add("@category", SqlDbType.NVarChar).Value = textBoxCategory.Text;
+                    cmd.Parameters.Add("@popularity", SqlDbType.Int).Value = 0;
+                    cmd.Parameters.Add("@quantity", SqlDbType.Int).Value = textBoxCount.Text;
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    updateProducts();
+                    textBoxName.Text = "";
+                    textBoxPrice.Text = "";
+                    textBoxCategory.Text = "";
+                    labelFile.Text = "";
+                    textBoxCount.Text = "";
+                    textBoxDiscription.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    conn.Close();
+                    MessageBox.Show(ex.Message);
+                }   
+            }
+            else
+            {
+                MessageBox.Show("Неверные данные","Внимание!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+        }
+
+        private void textBoxPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar)) && !((e.KeyChar == ',') && (textBoxPrice.Text.IndexOf(",") == -1) && (textBoxPrice.Text.Length != 0)))
+            {
+                if (e.KeyChar != (char)Keys.Back) e.Handled = true;
+            }
+        }
+
+        private void textBoxCount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsDigit(number) && !Char.IsControl(number))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void удалитьToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (listViewProducts.SelectedIndices.Count > 0)
+            {
+                foreach (ListViewItem item in listViewProducts.SelectedItems)
+                {
+                    SqlCommand cmd = new SqlCommand($"DELETE FROM Products WHERE Id = {Convert.ToInt32(item.Tag)}", conn);
+                    try
+                    {
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                updateProducts();
+            }
+            listViewProducts.SelectedItems.Clear();
             GC.Collect();
         }
     }

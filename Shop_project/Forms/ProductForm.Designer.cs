@@ -129,7 +129,7 @@ namespace Shop_project.Forms
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 26);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Добвить в карзину";
+            this.button1.Text = "Добавить в корзину";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -178,7 +178,6 @@ namespace Shop_project.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "-";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProductForm_FormClosing);
-            
             this.Load += new System.EventHandler(this.ProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
