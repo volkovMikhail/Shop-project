@@ -385,5 +385,7 @@ namespace Shop_project
             AboutBox aboutBox = new AboutBox();
             aboutBox.ShowDialog();
         }
+
+       
     }
 }

@@ -234,6 +234,7 @@ namespace Shop_project
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
+            
             // 
             // tabPage1
             // 
