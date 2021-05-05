@@ -502,7 +502,7 @@
     <value>0, 0</value>
   </data>
   <data name="listViewCatalog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>598, 424</value>
+    <value>599, 424</value>
   </data>
   <data name="listViewCatalog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -535,7 +535,7 @@
     <value>870, 424</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>268</value>
+    <value>267</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1087,7 +1087,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="listViewCart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>599, 407</value>
+    <value>600, 407</value>
   </data>
   <data name="listViewCart.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1117,13 +1117,13 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>603, 424</value>
+    <value>604, 424</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>Карзина</value>
+    <value>Корзина</value>
   </data>
   <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
     <value>groupBox3</value>
@@ -1153,7 +1153,7 @@
     <value>870, 424</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>264</value>
+    <value>263</value>
   </data>
   <data name="splitContainer2.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1186,7 +1186,7 @@
     <value>1</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
-    <value>Личный кабинет / Карзина</value>
+    <value>Личный кабинет / Корзина</value>
   </data>
   <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
     <value>tabPage2</value>
@@ -1226,6 +1226,9 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>110</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
