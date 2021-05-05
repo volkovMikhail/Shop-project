@@ -52,6 +52,8 @@ namespace Shop_project.Forms
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.активаироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.деактивироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelSum = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxID = new System.Windows.Forms.TextBox();
@@ -59,8 +61,22 @@ namespace Shop_project.Forms
             this.maskedTextBoxPhone = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelSum = new System.Windows.Forms.Label();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.listViewProducts = new System.Windows.Forms.ListView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.удалитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -69,6 +85,13 @@ namespace Shop_project.Forms
             this.splitContainer1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -166,7 +189,7 @@ namespace Shop_project.Forms
             // columnHeader12
             // 
             this.columnHeader12.Text = "Телефон";
-            this.columnHeader12.Width = 108;
+            this.columnHeader12.Width = 97;
             // 
             // columnHeader13
             // 
@@ -191,7 +214,7 @@ namespace Shop_project.Forms
             // columnHeader6
             // 
             this.columnHeader6.Text = "Адрес";
-            this.columnHeader6.Width = 104;
+            this.columnHeader6.Width = 95;
             // 
             // columnHeader7
             // 
@@ -200,7 +223,7 @@ namespace Shop_project.Forms
             // columnHeader8
             // 
             this.columnHeader8.Text = "Дата";
-            this.columnHeader8.Width = 62;
+            this.columnHeader8.Width = 83;
             // 
             // columnHeader9
             // 
@@ -221,6 +244,7 @@ namespace Shop_project.Forms
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
             // активаироватьToolStripMenuItem
             // 
@@ -234,6 +258,25 @@ namespace Shop_project.Forms
             this.деактивироватьToolStripMenuItem.Name = "деактивироватьToolStripMenuItem";
             this.деактивироватьToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.деактивироватьToolStripMenuItem.Text = "Деактивировать";
+            this.деактивироватьToolStripMenuItem.Click += new System.EventHandler(this.деактивироватьToolStripMenuItem_Click);
+            // 
+            // labelSum
+            // 
+            this.labelSum.AutoSize = true;
+            this.labelSum.Location = new System.Drawing.Point(330, 68);
+            this.labelSum.Name = "labelSum";
+            this.labelSum.Size = new System.Drawing.Size(13, 13);
+            this.labelSum.TabIndex = 3;
+            this.labelSum.Text = "_";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(280, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Сумма:";
             // 
             // label3
             // 
@@ -285,6 +328,7 @@ namespace Shop_project.Forms
             this.maskedTextBoxPhone.Size = new System.Drawing.Size(120, 20);
             this.maskedTextBoxPhone.TabIndex = 3;
             this.maskedTextBoxPhone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxPhone_MaskInputRejected);
+            this.maskedTextBoxPhone.TextChanged += new System.EventHandler(this.maskedTextBoxPhone_TextChanged);
             // 
             // label1
             // 
@@ -297,6 +341,7 @@ namespace Shop_project.Forms
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.splitContainer2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -305,23 +350,137 @@ namespace Shop_project.Forms
             this.tabPage2.Text = "Товары";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // splitContainer2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(280, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Сумма:";
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.IsSplitterFixed = true;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // labelSum
+            // splitContainer2.Panel1
             // 
-            this.labelSum.AutoSize = true;
-            this.labelSum.Location = new System.Drawing.Point(330, 68);
-            this.labelSum.Name = "labelSum";
-            this.labelSum.Size = new System.Drawing.Size(13, 13);
-            this.labelSum.TabIndex = 3;
-            this.labelSum.Text = "_";
+            this.splitContainer2.Panel1.Controls.Add(this.listViewProducts);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer2.Size = new System.Drawing.Size(1070, 424);
+            this.splitContainer2.SplitterDistance = 290;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // listViewProducts
+            // 
+            this.listViewProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader18,
+            this.columnHeader19,
+            this.columnHeader20});
+            this.listViewProducts.ContextMenuStrip = this.contextMenuStrip2;
+            this.listViewProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewProducts.FullRowSelect = true;
+            this.listViewProducts.GridLines = true;
+            this.listViewProducts.HideSelection = false;
+            this.listViewProducts.Location = new System.Drawing.Point(0, 0);
+            this.listViewProducts.Name = "listViewProducts";
+            this.listViewProducts.Size = new System.Drawing.Size(1070, 290);
+            this.listViewProducts.TabIndex = 0;
+            this.listViewProducts.UseCompatibleStateImageBehavior = false;
+            this.listViewProducts.View = System.Windows.Forms.View.Details;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Location = new System.Drawing.Point(5, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(806, 124);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Добавлние товара";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(85, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 33);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "label5";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(616, 92);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(184, 26);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Добавить в базу данных";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.удалитьToolStripMenuItem1});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(119, 26);
+            // 
+            // удалитьToolStripMenuItem1
+            // 
+            this.удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
+            this.удалитьToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
+            this.удалитьToolStripMenuItem1.Text = "Удалить";
+            // 
+            // Id
+            // 
+            this.Id.Text = "Id";
+            this.Id.Width = 64;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Название";
+            this.columnHeader14.Width = 273;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Цена";
+            this.columnHeader15.Width = 85;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Описание";
+            this.columnHeader16.Width = 230;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Картинка";
+            this.columnHeader17.Width = 75;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Категория";
+            this.columnHeader18.Width = 122;
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Популярность";
+            this.columnHeader19.Width = 89;
+            // 
+            // columnHeader20
+            // 
+            this.columnHeader20.Text = "Количество в наличии";
+            this.columnHeader20.Width = 128;
             // 
             // Admin
             // 
@@ -346,6 +505,14 @@ namespace Shop_project.Forms
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -382,5 +549,21 @@ namespace Shop_project.Forms
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.Label labelSum;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.ListView listViewProducts;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem1;
+        private System.Windows.Forms.ColumnHeader Id;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.ColumnHeader columnHeader20;
     }
 }
