@@ -46,9 +46,11 @@ namespace Shop_project
                     comboBoxCategory.Items.Add(dataReader[0]);
                 }
                 GC.Collect();
+                conn.Close();
             }
             catch (Exception ex)
             {
+                conn.Close();
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -57,7 +59,6 @@ namespace Shop_project
                 {
                     dataReader.Close();
                 }
-                conn.Close();
             }
             comboBoxCategory.SelectedIndex = 0;
         }
