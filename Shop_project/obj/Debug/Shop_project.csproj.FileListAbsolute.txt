@@ -12,15 +12,9 @@ C:\Users\VMICH\Desktop\Shop_project\Shop_project\obj\Debug\ХорошихБла�
 C:\Users\VMICH\Desktop\Shop_project\Shop_project\obj\Debug\ХорошихБлаг.pdb
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\bin\Debug\DB.mdf
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\bin\Debug\DB_log.ldf
-C:\Users\VMICH\Desktop\Shop-project\Shop_project\bin\Debug\ХорошихБлаг.exe.config
-C:\Users\VMICH\Desktop\Shop-project\Shop_project\bin\Debug\ХорошихБлаг.exe
-C:\Users\VMICH\Desktop\Shop-project\Shop_project\bin\Debug\ХорошихБлаг.pdb
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.csprojAssemblyReference.cache
-C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Properties.Resources.resources
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.csproj.GenerateResource.cache
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.csproj.CoreCompileInputs.cache
-C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\ХорошихБлаг.exe
-C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\ХорошихБлаг.pdb
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.Registration.resources
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Forms.Login.resources
 C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Shop_project.Main.resources
@@ -46,3 +40,9 @@ C:\Users\VIKTOR\Desktop\Shop-project-main\Shop_project\obj\Debug\Shop_project.cs
 C:\Users\VIKTOR\Desktop\Shop-project-main\Shop_project\obj\Debug\Shop_project.csproj.CoreCompileInputs.cache
 C:\Users\VIKTOR\Desktop\Shop-project-main\Shop_project\obj\Debug\Graffiti Shop.exe
 C:\Users\VIKTOR\Desktop\Shop-project-main\Shop_project\obj\Debug\Graffiti Shop.pdb
+C:\Users\VMICH\Desktop\Shop-project\Shop_project\bin\Debug\Graffiti Shop.exe.config
+C:\Users\VMICH\Desktop\Shop-project\Shop_project\bin\Debug\Graffiti Shop.exe
+C:\Users\VMICH\Desktop\Shop-project\Shop_project\bin\Debug\Graffiti Shop.pdb
+C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Graffiti_Shop_project.Properties.Resources.resources
+C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Graffiti Shop.exe
+C:\Users\VMICH\Desktop\Shop-project\Shop_project\obj\Debug\Graffiti Shop.pdb
