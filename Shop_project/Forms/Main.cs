@@ -37,6 +37,7 @@ namespace Shop_project
             SqlDataReader dataReader = null;
             try
             {
+                comboBoxCategory.Items.Clear();
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT DISTINCT category FROM Products", conn);
                 dataReader = cmd.ExecuteReader();
